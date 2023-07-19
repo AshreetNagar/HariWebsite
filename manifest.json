@@ -1,0 +1,32 @@
+{
+    "short_name": "EventCreate",
+    "name": "Reliable, simple event marketing software for any occasion. Create a beautiful event website, sell tickets, and promote your event online.",
+    "icons": [
+      {
+        "src": "assets/icons/launcher-icon-1x.png",
+        "type": "image/png",
+        "sizes": "48x48"
+      },
+      {
+        "src": "assets/icons/launcher-icon-2x.png",
+        "type": "image/png",
+        "sizes": "96x96"
+      },
+      {
+        "src": "assets/icons/launcher-icon-4x.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "assets/icons/launcher-icon-9x.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+  
+    ],
+    "start_url": "/utm_source=homescreen",
+    "theme_color": "#2e8fa5",
+    "orientation": "portrait",
+    "background_color": "#2e8fa5",
+    "display": "browser"
+  }

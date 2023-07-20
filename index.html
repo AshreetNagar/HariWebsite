@@ -48,8 +48,8 @@
 
   .location-section {
     background-color: rgb(117, 27, 27);
-    height: 800px;
-    /* height: 50/vh; */
+    /* height: 800px; */
+    height: 100vh;
   }
 
   .location-text-column {
@@ -70,6 +70,13 @@
     float: left;
     width: 50%;
   }
+
+  /* .row {
+    height: min-content;
+    content: ""; */
+    /* display: table; */
+    /* clear: both;
+  } */
 
   /* Clear floats after the columns */
   .row:after {
@@ -101,7 +108,8 @@
       display: inline-block;
       position: relative;
       left: 20%;
-      top: -25%;
+      position: absolute;
+      bottom: 25vh;
     }
   .button{
     background-color: rgb(117, 27, 27);
@@ -168,6 +176,8 @@
 
   .formbold-mb-5 {
     margin-bottom: 20px;
+    position: relative;
+    /* left: 36vw; */
   }
 
   .formbold-main-wrapper {
@@ -211,6 +221,8 @@
   }
 
   .formbold-btn {
+    position: relative;
+    left: 36vw;
     text-align: center;
     font-size: 16px;
     border-radius: 6px;

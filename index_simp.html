@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Hari & Harini's Arrangetrum</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      border: 0px;
+    }
+  </style>
+</head>
+
+<style>
+  .intro-section {
+    background-color: black;
+    height: 800px;
+    background-image: url('images/2BK02806.JPG');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 108%;
+  }
+
+  .intro-text {
+    text-align: start;
+    padding: 17%;
+    padding-inline-start: 5%;
+    color: aliceblue;
+    font-size: xx-large;
+    font-style: oblique;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+
+  }
+
+  .location-section {
+    background-color: rgb(117, 27, 27);
+    height: 800px;
+  }
+
+  .location-text-column {
+    text-align: start;
+    padding: 17%;
+    padding-inline-start: 13%;
+    color: aliceblue;
+    font-size: x-large;
+    font-style: oblique;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.5;
+    margin-top: 12.5%;
+  }
+
+  /* style for column in location*/
+  .column {
+    float: left;
+    width: 50%;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .google-map {
+    padding-bottom: 100%;
+    position: relative;
+  }
+
+  .google-map iframe {
+    height: 75%;
+    width: 85%;
+    filter: invert(100%);
+    margin-top: 12.5%;
+    position: absolute;
+  }
+
+  .button {
+      background-color: rgb(117, 27, 27);
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      position: relative;
+      left: 20%;
+      top: -30%;
+    }
+
+    /* background-color: rgb(117, 27, 27);
+      border: none;
+      text-decoration-color: rgb(117, 27, 27);
+      padding: 15px 32px;
+      text-align: justify;
+      display: inline-block;
+      font-size: 16px;
+      position: relative;
+      left: 20%;
+      top: -30%; */
+
+  .rsvp-section {
+    background-color: white;
+    height: 800px;
+  }
+
+  .rsvp-header-text {
+    text-align: center;
+    color: black;
+    font-size: large;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+
+  }
+
+  .rsvp-form-text {
+    text-align: start;
+    color: black;
+    font-size: medium;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+
+  }
+  .invite-section {
+    background-color: black;
+    height: 800px;
+    background-image: url('images/2BK02822.JPG');
+    background-size: 100% 102%;
+  }
+
+  .invite-text {
+    text-align: center;
+    padding: 17%;
+    padding-inline-start: 13%;
+    color: aliceblue;
+    font-size: xx-large;
+    font-style: oblique;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .cp-section {
+    background-color: black;
+    height: 50px;
+    color: aliceblue;
+    text-align: center;
+    padding: 0.5%;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Inter", sans-serif;
+  }
+
+  .formbold-mb-5 {
+    margin-bottom: 20px;
+  }
+
+  .formbold-pt-3 {
+    padding-top: 12px;
+  }
+
+  .formbold-main-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+  }
+
+  .formbold-form-wrapper {
+    margin: 0 auto;
+    max-width: 550px;
+    width: 100%;
+    background: white;
+  }
+
+  .formbold-form-label {
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+    color: #07074d;
+    margin-bottom: 12px;
+  }
+
+  .formbold-form-label-2 {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .formbold-form-input {
+    width: 100%;
+    padding: 12px 24px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    background: white;
+    font-weight: 500;
+    font-size: 16px;
+    color: #6b7280;
+    outline: none;
+    resize: none;
+  }
+
+  .formbold-form-input:focus {
+    border-color: #d54343;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .formbold-btn {
+    text-align: center;
+    font-size: 16px;
+    border-radius: 6px;
+    padding: 14px 32px;
+    border: none;
+    font-weight: 600;
+    background-color: #d54343;
+    color: white;
+    cursor: pointer;
+  }
+
+  .formbold-btn:hover {
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .formbold--mx-3 {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+
+  .formbold-px-3 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  .w-full {
+    width: 100%;
+  }
+
+  .formbold-radio {
+    width: 20px;
+    height: 20px;
+  }
+
+  .formbold-radio-label {
+    font-weight: 500;
+    font-size: 16px;
+    padding-left: 12px;
+    color: #070707;
+    padding-right: 20px;
+  }
+
+  @media (min-width: 540px) {
+    .sm\:w-half {
+      width: 50%;
+    }
+  }
+</style>
+
+
+<body>
+  <div class="intro-section">
+    <div class="intro-text">
+      <h1>Hariharan & Harini's</h1>
+      <h1>Bharathanatyam Arangetram</h1>
+      <p>Kalai Aruvi Academy of Fine Arts</p>
+      <p>Diciples of Renuka Vigeneswaran</p>
+    </div>
+    <div class="button">
+      <button class="button button-dark links-to-registration" id="scrollToRSVP" style="cursor: pointer;">RSVP
+        Now</button>
+    </div>
+    <div class="ec-editor-block" data-elementtype="image">
+      <a rel="nofollow" href="#" class="links-to-registration"></a>
+    </div>
+
+  </div>
+
+
+  <div class="location-section">
+    <div class="row">
+      <div class="column">
+        <div class="location-text-column">
+          <h2>Location</h2>
+          <p>Chinese Cultural Center of Greater Toronto</p>
+          <p>5183 Sheppard Ave E, </p>
+          <p>Scarborough, ON M1B 5Z5</p>
+          <br> <br>
+          <h2>Date & Time</h2>
+          <p>August 19, 2023 </p>
+          <p>5:00 PM - 11:00 PM EST</p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="google-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2879.949706010915!2d-79.23636982332!3d43.79465664326961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d0e7d9e874b1%3A0xe93a7f845cc0198c!2sChinese%20Cultural%20Centre%20Of%20Greater%20Toronto!5e0!3m2!1sen!2sca!4v1689808048556!5m2!1sen!2sca"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <div class="rsvp-section">
+    <div class="formbold-main-wrapper">
+      <!-- Author: FormBold Team -->
+      <!-- Learn More: https://formbold.com -->
+      <div class="formbold-form-wrapper">
+        <div class="rsvp-header-text">
+        <h1> RSVP </h1>
+      </div>
+      <div class="rsvp-form-text">
+        <form action="" id="submitRSVP">
+          <div class="flex flex-wrap formbold--mx-3">
+            <div class="w-full sm:w-half formbold-px-3">
+              <div class="formbold-mb-5">
+                <label for="fName" class="formbold-form-label"> First Name </label>
+                <input type="text" name="fName" id="fName" placeholder="First Name" class="formbold-form-input" />
+              </div>
+            </div>
+            <div class="w-full sm:w-half formbold-px-3">
+              <div class="formbold-mb-5">
+                <label for="lName" class="formbold-form-label"> Last Name </label>
+                <input type="text" name="lName" id="lName" placeholder="Last Name" class="formbold-form-input" />
+              </div>
+            </div>
+          </div>
+
+          <div class="formbold-mb-5">
+            <div class="formbold-mb-5">
+              <label for="email" class="formbold-form-label"> E-mail </label>
+              <input type="text" name="email" id="email" placeholder="E-mail" class="formbold-form-input" />
+            </div>
+
+            <div class="formbold-mb-5">
+              <label for="guest" class="formbold-form-label">
+                How many guests are attending?
+              </label>
+              <input type="number" name="guest" id="guest" placeholder="1" class="formbold-form-input" />
+            </div>
+            <label for="guest" class="formbold-form-label">
+              Are you attending?
+            </label>
+            <div class="flex formbold-mb-5">
+              <div class="flex">
+                <input type="radio" name="radio1" id="radioButton1" class="formbold-radio" />
+                <label for="radioButton1" class="formbold-radio-label"> Yes </label>
+              </div>
+              <div class="flex">
+                <input type="radio" name="radio1" id="radioButton2" class="formbold-radio" />
+                <label for="radioButton2" class="formbold-radio-label"> No </label>
+              </div>
+            </div>
+
+            <div>
+              <button class="formbold-btn">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="invite-section">
+    <div class="invite-text">
+      <h3>We look forward to seeing you!</h3>
+    </div>
+  </div>
+
+  <div class="cp-section">
+    <p>Copyright ©-All rights are reserved</p>
+  </div>
+</body>
+
+</html>

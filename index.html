@@ -128,6 +128,44 @@
 </style>
 <body>
 
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+      import { getFirestore, collection, getDocs, addDoc, doc  } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"
+      submitRSVP.addEventListener("submit", (e) => {
+          e.preventDefault();
+          let firstName = document.getElementById("fName");
+          let lastName = document.getElementById("lName");
+          let email = document.getElementById("email");
+          let guest = document.getElementById("guest");
+          let radioButton1 = document.getElementById("radioButton1");
+          let radioButton2 = document.getElementById("radioButton2");
+          let areYouAttending = true;
+          if (radioButton2.checked){
+            areYouAttending = false;
+          }
+          let formData = {
+              "Email": email.value,
+              "FirstName": firstName.value,
+              "GuestAmount": guest.value,
+              "LastName": lastName.value,
+              "AreYouAttending": areYouAttending
+          }
+          console.log(formData)
+          const firebaseConfig = {
+            apiKey: "AIzaSyDYO2tF1IzGtrKoyQCMJmosPUtYhUTe7ZA",
+            authDomain: "hariwebsite-d5d9b.firebaseapp.com",
+            projectId: "hariwebsite-d5d9b",
+            storageBucket: "hariwebsite-d5d9b.appspot.com",
+            messagingSenderId: "376065488204",
+            appId: "1:376065488204:web:dc8acb5d35ed4ebab6cbe9"
+          };
+          const db = getFirestore(initializeApp(firebaseConfig));
+          const ref = collection(db, "RSVPInfo");
+          addDoc(ref,formData)
+      });
+    </script>
+
+
     <section class="firstsection">
         <div class="box-main">
             <div class="firstHalf">
@@ -224,7 +262,7 @@
                     <!-- Author: FormBold Team -->
                     <!-- Learn More: https://formbold.com -->
                     <div class="formbold-form-wrapper">
-                      <form action="https://formbold.com/s/FORM_ID" method="POST">
+                      <form action="" id="submitRSVP">
                         <div class="flex flex-wrap formbold--mx-3">
                           <div class="w-full sm:w-half formbold-px-3">
                             <div class="formbold-mb-5">

@@ -179,19 +179,29 @@
                 <h1 class="text-big" id="program">
                     Location
                 </h1>
+
+                <div class="ec-editor-block h4" data-elementtype="text"><strong>Location</strong></div>
+                <div class="ec-editor-block p" data-elementtype="text">Chinese Cultural Centre<br>5183 Sheppard Ave E, Scarborough ON, Canada</div>
+
+                <div class="ec-editor-block" data-elementtype="spacer" style="height:20px;"></div>
+
+                <div class="ec-editor-block h4" data-elementtype="text"><strong>Date &amp; Time</strong></div>
+                <div class="ec-editor-block p" data-elementtype="text">August 19, 2023<br>5:00 PM - 11:00 PM</div>
+
+
                 <p class="text-small">
                     <div class="google-map">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2879.949706010915!2d-79.23636982332!3d43.79465664326961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d0e7d9e874b1%3A0xe93a7f845cc0198c!2sChinese%20Cultural%20Centre%20Of%20Greater%20Toronto!5e0!3m2!1sen!2sca!4v1689808048556!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <style>
                         .google-map {
-                            padding-bottom: 300%;
+                            padding-bottom: 100%;
                             position: relative;
                         }
 
                         .google-map iframe {
                             height: 150%;
-                            width: 800%;
+                            width: 300%;
                             filter: invert(100%);
                             left: 0;
                             top: 0;
@@ -210,7 +220,6 @@
             <h1 class="sectionTag text-big">RSVP</h1>
  
             <p class="sectionSubTag text-small">
-
                 <div class="formbold-main-wrapper">
                     <!-- Author: FormBold Team -->
                     <!-- Learn More: https://formbold.com -->
@@ -244,6 +253,18 @@
                         </div>
                   
                         <div class="formbold-mb-5">
+                            <div class="formbold-mb-5">
+                              <label for="email" class="formbold-form-label"> E-mail </label>
+                              <input
+                                type="text"
+                                name="email"
+                                id="email"
+                                placeholder="E-mail"
+                                class="formbold-form-input"
+                              />
+                            </div>
+
+                        <div class="formbold-mb-5">
                           <label for="guest" class="formbold-form-label">
                             How many guests are attending?
                           </label>
@@ -251,11 +272,13 @@
                             type="number"
                             name="guest"
                             id="guest"
-                            placeholder="5"
+                            placeholder="1"
                             class="formbold-form-input"
                           />
                         </div>
-                  
+                        <label for="guest" class="formbold-form-label">
+                            Are you attending?
+                          </label>
                         <div class="flex formbold-mb-5">
                           <div class="flex">
                             <input
@@ -390,58 +413,6 @@
                       }
                     }
                   </style>
-                  
-                  </div>
-                  <script type="text/javascript">
-                    $(document).ready(function() {
-                  
-                      $('#email-blocker-form').validate({
-                        rules: {
-                          "first_name": {
-                            required: true
-                          },
-                          "last_name": {
-                            required: true
-                          },
-                          "email": {
-                            required: true,
-                            email: true
-                          },
-                          "people": {
-                            required: true
-                          },
-                  
-                        }, messages : {
-                          "first_name": 'Please enter a first name',
-                          "last_name": 'Please enter a last name',
-                          "email": {
-                            required: 'Please enter an email address',
-                            email: 'Please enter a valid email address',
-                          },
-                          "people": 'How many people are attending?'
-                  
-                        }
-                      })
-                  
-                    $("#password-form").validate({
-                        rules: {
-                          "password": {
-                            required: true
-                          },
-                  
-                        }, messages : {
-                          "password": 'Please enter a password'
-                  
-                        }
-                  
-                  
-                      });
-                  
-                    });
-                  </script>
-                  
-            </p>
- 
  
         </div>
  

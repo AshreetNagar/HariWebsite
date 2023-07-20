@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html>
+<html lang="en">
 
 <head>
   <title>Hari & Harini's Arrangetrum</title>
   <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <title>Bootstrap Simple Success Confirmation Popup</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
   <style>
     * {
       margin: 0px;
@@ -320,46 +329,46 @@
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
     import { getFirestore, collection, getDocs, addDoc, doc } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"
-    
+
     scrollToRSVP.addEventListener("click", (e) => {
-        var i = 10;
-        var int = setInterval(function() {
-            window.scrollTo(0, i);
-            i += 50;
-            if (i >= 1600) clearInterval(int);
-        }, 20);
+      var i = 10;
+      var int = setInterval(function () {
+        window.scrollTo(0, i);
+        i += 50;
+        if (i >= 1600) clearInterval(int);
+      }, 20);
     });
 
     submitRSVP.addEventListener("submit", (e) => {
-        e.preventDefault();
-        let firstName = document.getElementById("fName");
-        let lastName = document.getElementById("lName");
-        let email = document.getElementById("email");
-        let guest = document.getElementById("guest");
-        let radioButton1 = document.getElementById("radioButton1");
-        let radioButton2 = document.getElementById("radioButton2");
-        let areYouAttending = true;
-        if (radioButton2.checked) 
-            areYouAttending = false;
-        let formData = {
-            "Email": email.value,
-            "FirstName": firstName.value,
-            "GuestAmount": guest.value,
-            "LastName": lastName.value,
-            "AreYouAttending": areYouAttending
-        }
-        console.log(formData)
-        const firebaseConfig = {
-            apiKey: "AIzaSyDYO2tF1IzGtrKoyQCMJmosPUtYhUTe7ZA",
-            authDomain: "hariwebsite-d5d9b.firebaseapp.com",
-            projectId: "hariwebsite-d5d9b",
-            storageBucket: "hariwebsite-d5d9b.appspot.com",
-            messagingSenderId: "376065488204",
-            appId: "1:376065488204:web:dc8acb5d35ed4ebab6cbe9"
-        };
-        const db = getFirestore(initializeApp(firebaseConfig));
-        const ref = collection(db, "RSVPInfo");
-        addDoc(ref, formData)
+      e.preventDefault();
+      let firstName = document.getElementById("fName");
+      let lastName = document.getElementById("lName");
+      let email = document.getElementById("email");
+      let guest = document.getElementById("guest");
+      let radioButton1 = document.getElementById("radioButton1");
+      let radioButton2 = document.getElementById("radioButton2");
+      let areYouAttending = true;
+      if (radioButton2.checked)
+        areYouAttending = false;
+      let formData = {
+        "Email": email.value,
+        "FirstName": firstName.value,
+        "GuestAmount": guest.value,
+        "LastName": lastName.value,
+        "AreYouAttending": areYouAttending
+      }
+      console.log(formData)
+      const firebaseConfig = {
+        apiKey: "AIzaSyDYO2tF1IzGtrKoyQCMJmosPUtYhUTe7ZA",
+        authDomain: "hariwebsite-d5d9b.firebaseapp.com",
+        projectId: "hariwebsite-d5d9b",
+        storageBucket: "hariwebsite-d5d9b.appspot.com",
+        messagingSenderId: "376065488204",
+        appId: "1:376065488204:web:dc8acb5d35ed4ebab6cbe9"
+      };
+      const db = getFirestore(initializeApp(firebaseConfig));
+      const ref = collection(db, "RSVPInfo");
+      addDoc(ref, formData)
     });
   </script>
   <div>
@@ -415,71 +424,91 @@
         <!-- Learn More: https://formbold.com -->
         <div class="formbold-form-wrapper">
           <div class="rsvp-header-text">
-          <h1> RSVP </h1>
-        </div>
-        <div class="rsvp-form-text">
-          <form action="" id="submitRSVP">
-            <div class="flex flex-wrap formbold--mx-3">
-              <div class="w-full sm:w-half formbold-px-3">
-                <div class="formbold-mb-5">
-                  <label for="fName" class="formbold-form-label"> First Name </label>
-                  <input type="text" name="fName" id="fName" placeholder="First Name" class="formbold-form-input" />
+            <h1> RSVP </h1>
+          </div>
+          <div class="rsvp-form-text">
+            <form action="" id="submitRSVP">
+              <div class="flex flex-wrap formbold--mx-3">
+                <div class="w-full sm:w-half formbold-px-3">
+                  <div class="formbold-mb-5">
+                    <label for="fName" class="formbold-form-label"> First Name </label>
+                    <input type="text" name="fName" id="fName" placeholder="First Name" class="formbold-form-input" />
+                  </div>
                 </div>
-              </div>
-              <div class="w-full sm:w-half formbold-px-3">
-                <div class="formbold-mb-5">
-                  <label for="lName" class="formbold-form-label"> Last Name </label>
-                  <input type="text" name="lName" id="lName" placeholder="Last Name" class="formbold-form-input" />
+                <div class="w-full sm:w-half formbold-px-3">
+                  <div class="formbold-mb-5">
+                    <label for="lName" class="formbold-form-label"> Last Name </label>
+                    <input type="text" name="lName" id="lName" placeholder="Last Name" class="formbold-form-input" />
+                  </div>
                 </div>
-              </div>
-            </div>
-
-            <div class="formbold-mb-5">
-              <div class="formbold-mb-5">
-                <label for="email" class="formbold-form-label"> E-mail </label>
-                <input type="text" name="email" id="email" placeholder="E-mail" class="formbold-form-input" />
               </div>
 
               <div class="formbold-mb-5">
+                <div class="formbold-mb-5">
+                  <label for="email" class="formbold-form-label"> E-mail </label>
+                  <input type="text" name="email" id="email" placeholder="E-mail" class="formbold-form-input" />
+                </div>
+
+                <div class="formbold-mb-5">
+                  <label for="guest" class="formbold-form-label">
+                    How many guests are attending?
+                  </label>
+                  <input type="number" min="0" name="guest" id="guest" value="1" class="formbold-form-input" />
+                </div>
                 <label for="guest" class="formbold-form-label">
-                  How many guests are attending?
+                  Are you attending?
                 </label>
-                <input type="number" min="0" name="guest" id="guest" value="1" class="formbold-form-input" />
-              </div>
-              <label for="guest" class="formbold-form-label">
-                Are you attending?
-              </label>
-              <div class="flex formbold-mb-5">
-                <div class="flex">
-                  <input type="radio" name="radio1" id="radioButton1" class="formbold-radio" />
-                  <label for="radioButton1" class="formbold-radio-label"> Yes </label>
+                <div class="flex formbold-mb-5">
+                  <div class="flex">
+                    <input type="radio" name="radio1" id="radioButton1" class="formbold-radio" />
+                    <label for="radioButton1" class="formbold-radio-label"> Yes </label>
+                  </div>
+                  <div class="flex">
+                    <input type="radio" name="radio1" id="radioButton2" class="formbold-radio" />
+                    <label for="radioButton2" class="formbold-radio-label"> No </label>
+                  </div>
                 </div>
-                <div class="flex">
-                  <input type="radio" name="radio1" id="radioButton2" class="formbold-radio" />
-                  <label for="radioButton2" class="formbold-radio-label"> No </label>
-                </div>
-              </div>
 
-              <div>
-                <button class="formbold-btn">Submit</button>
+                <div>
+                  <a href="#myModal" class="trigger-btn" data-toggle="modal"><button
+                      class="formbold-btn">Submit</button></a>
+                </div>
+                <!-- Modal HTML -->
+                <div id="myModal" class="modal fade">
+                  <div class="modal-dialog modal-confirm">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <div class="icon-box">
+                          <i class="material-icons">&#xE876;</i>
+                        </div>
+                        <h4 class="modal-title">Awesome!</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p class="text-center">Your booking has been confirmed. Check your email for detials.</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
 
 
-    <div class="invite-section">
-      <div class="invite-text">
-        <h3>We look forward to seeing you!</h3>
+      <div class="invite-section">
+        <div class="invite-text">
+          <h3>We look forward to seeing you!</h3>
+        </div>
+      </div>
+
+      <div class="cp-section">
+        <p>Copyright ©-All rights are reserved</p>
       </div>
     </div>
-
-    <div class="cp-section">
-      <p>Copyright ©-All rights are reserved</p>
-    </div>
-  </div>
 </body>
 
 </html>

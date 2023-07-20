@@ -276,6 +276,16 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
         import { getFirestore, collection, getDocs, addDoc, doc } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"
+        
+        scrollToRSVP.addEventListener("click", (e) => {
+            var i = 10;
+            var int = setInterval(function() {
+                window.scrollTo(0, i);
+                i += 50;
+                if (i >= 1650) clearInterval(int);
+            }, 20);
+        });
+
         submitRSVP.addEventListener("submit", (e) => {
             e.preventDefault();
             let firstName = document.getElementById("fName");
@@ -333,11 +343,7 @@
                 <div class="ec-editor-block" data-elementtype="spacer" style="height:40px;">
                 </div>
                 <div class="ec-editor-block" data-elementtype="button">
-                    <a class="button button-dark links-to-registration" rel="nofollow" href="/registration"
-                        onmouseout="this.style.backgroundColor='#d54343'; this.style.color='rgb(255, 255, 255)'"
-                        style="background-color: rgb(213, 67, 67); color: rgb(255, 255, 255);">
-                        RSVP Now
-                    </a>
+                    <button class="button button-dark links-to-registration" id="scrollToRSVP" style="cursor: pointer;">RSVP Now</button>
                 </div>
                 <div class="ec-editor-block" data-elementtype="image">
                     <a rel="nofollow" href="#" class="links-to-registration"></a>

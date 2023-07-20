@@ -1,168 +1,313 @@
 <!DOCTYPE html>
- 
+
 <html>
- 
+
 <head>
-  <title>Hari & Harini's Arrangetrum</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Hari & Harini's Arrangetrum</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 </head>
- 
+
 <style>
-  * {
-      margin: 0;
-      padding: 0;
-  }
+    * {
+        margin: 0;
+        padding: 0;
+    }
 
 
-  .background {
-      background: black;
-      background-blend-mode: darken;
-      background-size: cover;
-  }
+    .background {
+        background: black;
+        background-blend-mode: darken;
+        background-size: cover;
+    }
 
 
-  .firstsection {
-      background-color: black;
-      height: 800px;
-  }
+    .firstsection {
+        background-color: black;
+        height: 800px;
+    }
 
-  .secondsection {
-      background-color: rgb(213, 67, 67);
-      height: 800px;
-  }
+    .secondsection {
+        background-color: rgb(213, 67, 67);
+        height: 800px;
+    }
 
-  .box-main {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: whitesmoke;
-      max-width: 80%;
-      margin: auto;
-      height: 80%;
-  }
+    .box-main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: whitesmoke;
+        max-width: 80%;
+        margin: auto;
+        height: 80%;
+    }
 
-  .firsthalf {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-  }
+    .firsthalf {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
-  .secondhalf {
-      width: 30%;
-  }
+    .secondhalf {
+        width: 30%;
+    }
 
-  .secondhalf img {
-      width: 70%;
-      border: 4px solid white;
-      border-radius: 150px;
-      display: block;
-      margin: auto;
-  }
+    .secondhalf img {
+        width: 70%;
+        border: 4px solid white;
+        border-radius: 150px;
+        display: block;
+        margin: auto;
+    }
 
-  .text-big {
-      font-family: 'Piazzolla', serif;
-      font-weight: bold;
-      font-size: 35px;
-  }
+    .text-big {
+        font-family: 'Piazzolla', serif;
+        font-weight: bold;
+        font-size: 35px;
+    }
 
-  .text-small {
-      font-size: 18px;
-  }
+    .text-small {
+        font-size: 18px;
+    }
 
-  .btn {
-      padding: 8px 20px;
-      margin: 7px 0;
-      border: 2px solid white;
-      border-radius: 8px;
-      background: none;
-      color: white;
-      cursor: pointer;
-  }
+    .btn {
+        padding: 8px 20px;
+        margin: 7px 0;
+        border: 2px solid white;
+        border-radius: 8px;
+        background: none;
+        color: white;
+        cursor: pointer;
+    }
 
-  .btn-sm {
-      padding: 6px 10px;
-      vertical-align: middle;
-  }
+    .btn-sm {
+        padding: 6px 10px;
+        vertical-align: middle;
+    }
 
-  .section {
-      height: 800px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      max-width: 90%;
-      margin: auto;
-  }
+    .section {
+        height: 800px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 90%;
+        margin: auto;
+    }
 
-  .section-Left {
-      flex-direction: row-reverse;
-  }
+    .section-Left {
+        flex-direction: row-reverse;
+    }
 
-  .paras {
-      padding: 0px 65px;
-  }
+    .paras {
+        padding: 0px 65px;
+    }
 
-  .thumbnail img {
-      width: 250px;
-      border: 2px solid whitesmoke;
-      border-radius: 26px;
-      margin-top: 19px;
-  }
+    .thumbnail img {
+        width: 250px;
+        border: 2px solid whitesmoke;
+        border-radius: 26px;
+        margin-top: 19px;
+    }
 
-  .center {
-      text-align: center;
-  }
+    .center {
+        text-align: center;
+    }
 
-  .text-footer {
-      text-align: center;
-      padding: 30px 0;
-      font-family: 'Ubuntu', sans-serif;
-      display: flex;
-      justify-content: center;
-      color: white;
-  }
+    .text-footer {
+        text-align: center;
+        padding: 30px 0;
+        font-family: 'Ubuntu', sans-serif;
+        display: flex;
+        justify-content: center;
+        color: white;
+    }
+
+    .button {
+        background-color: #d54343;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+
+    .google-map {
+        padding-bottom: 100%;
+        position: relative;
+    }
+
+    .google-map iframe {
+        height: 150%;
+        width: 300%;
+        filter: invert(100%);
+        left: 0;
+        top: 0;
+        position: absolute;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Inter", sans-serif;
+    }
+
+    .formbold-mb-5 {
+        margin-bottom: 20px;
+    }
+
+    .formbold-pt-3 {
+        padding-top: 12px;
+    }
+
+    .formbold-main-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 48px;
+    }
+
+    .formbold-form-wrapper {
+        margin: 0 auto;
+        max-width: 550px;
+        width: 100%;
+        background: white;
+    }
+
+    .formbold-form-label {
+        display: block;
+        font-weight: 500;
+        font-size: 16px;
+        color: #07074d;
+        margin-bottom: 12px;
+    }
+
+    .formbold-form-label-2 {
+        font-weight: 600;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .formbold-form-input {
+        width: 100%;
+        padding: 12px 24px;
+        border-radius: 6px;
+        border: 1px solid #e0e0e0;
+        background: white;
+        font-weight: 500;
+        font-size: 16px;
+        color: #6b7280;
+        outline: none;
+        resize: none;
+    }
+
+    .formbold-form-input:focus {
+        border-color: #d54343;
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .formbold-btn {
+        text-align: center;
+        font-size: 16px;
+        border-radius: 6px;
+        padding: 14px 32px;
+        border: none;
+        font-weight: 600;
+        background-color: #d54343;
+        color: white;
+        cursor: pointer;
+    }
+
+    .formbold-btn:hover {
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .formbold--mx-3 {
+        margin-left: -12px;
+        margin-right: -12px;
+    }
+
+    .formbold-px-3 {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .flex-wrap {
+        flex-wrap: wrap;
+    }
+
+    .w-full {
+        width: 100%;
+    }
+
+    .formbold-radio {
+        width: 20px;
+        height: 20px;
+    }
+
+    .formbold-radio-label {
+        font-weight: 500;
+        font-size: 16px;
+        padding-left: 12px;
+        color: #070707;
+        padding-right: 20px;
+    }
+
+    @media (min-width: 540px) {
+        .sm\:w-half {
+            width: 50%;
+        }
+    }
 </style>
 
 
-</style>
 <body>
 
     <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
-      import { getFirestore, collection, getDocs, addDoc, doc  } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"
-      submitRSVP.addEventListener("submit", (e) => {
-          e.preventDefault();
-          let firstName = document.getElementById("fName");
-          let lastName = document.getElementById("lName");
-          let email = document.getElementById("email");
-          let guest = document.getElementById("guest");
-          let radioButton1 = document.getElementById("radioButton1");
-          let radioButton2 = document.getElementById("radioButton2");
-          let areYouAttending = true;
-          if (radioButton2.checked){
-            areYouAttending = false;
-          }
-          let formData = {
-              "Email": email.value,
-              "FirstName": firstName.value,
-              "GuestAmount": guest.value,
-              "LastName": lastName.value,
-              "AreYouAttending": areYouAttending
-          }
-          console.log(formData)
-          const firebaseConfig = {
-            apiKey: "AIzaSyDYO2tF1IzGtrKoyQCMJmosPUtYhUTe7ZA",
-            authDomain: "hariwebsite-d5d9b.firebaseapp.com",
-            projectId: "hariwebsite-d5d9b",
-            storageBucket: "hariwebsite-d5d9b.appspot.com",
-            messagingSenderId: "376065488204",
-            appId: "1:376065488204:web:dc8acb5d35ed4ebab6cbe9"
-          };
-          const db = getFirestore(initializeApp(firebaseConfig));
-          const ref = collection(db, "RSVPInfo");
-          addDoc(ref,formData)
-      });
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+        import { getFirestore, collection, getDocs, addDoc, doc } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"
+        submitRSVP.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let firstName = document.getElementById("fName");
+            let lastName = document.getElementById("lName");
+            let email = document.getElementById("email");
+            let guest = document.getElementById("guest");
+            let radioButton1 = document.getElementById("radioButton1");
+            let radioButton2 = document.getElementById("radioButton2");
+            let areYouAttending = true;
+            if (radioButton2.checked) {
+                areYouAttending = false;
+            }
+            let formData = {
+                "Email": email.value,
+                "FirstName": firstName.value,
+                "GuestAmount": guest.value,
+                "LastName": lastName.value,
+                "AreYouAttending": areYouAttending
+            }
+            console.log(formData)
+            const firebaseConfig = {
+                apiKey: "AIzaSyDYO2tF1IzGtrKoyQCMJmosPUtYhUTe7ZA",
+                authDomain: "hariwebsite-d5d9b.firebaseapp.com",
+                projectId: "hariwebsite-d5d9b",
+                storageBucket: "hariwebsite-d5d9b.appspot.com",
+                messagingSenderId: "376065488204",
+                appId: "1:376065488204:web:dc8acb5d35ed4ebab6cbe9"
+            };
+            const db = getFirestore(initializeApp(firebaseConfig));
+            const ref = collection(db, "RSVPInfo");
+            addDoc(ref, formData)
+        });
     </script>
 
 
@@ -173,36 +318,26 @@
                     Hariharan & Harini's
                 </h1>
                 <h1 class="text-big" id="web">
-                  Bharathanatya Arangetram
-              </h1>
-                 
+                    Bharathanatya Arangetram
+                </h1>
+
                 <p class="text-small">
                     Student of Kalai Aruvi Academy of Fine Arts
                 </p>
                 <p class="text-small">
-                  Diciple of 
-              </p>
-              <p class="text-small">
-                Diciple of Renuka Vigeneswaran
-            </p>
-            <div class="ec-editor-block" data-elementtype="spacer" style="height:40px;">
-            </div>
-            <div class="ec-editor-block" data-elementtype="button">
-                <a class="button button-dark links-to-registration" rel="nofollow" href="/registration" onmouseout="this.style.backgroundColor='#d54343'; this.style.color='rgb(255, 255, 255)'" style="background-color: rgb(213, 67, 67); color: rgb(255, 255, 255);">
-                    RSVP Now 
-                </a>
-                <style>
-                    .button {
-                        background-color: #d54343;
-                        border: none;
-                        color: white;
-                        padding: 15px 32px;
-                        text-align: center;
-                        text-decoration: none;
-                        display: inline-block;
-                        font-size: 16px;
-                    }
-                </style>
+                    Diciple of
+                </p>
+                <p class="text-small">
+                    Diciple of Renuka Vigeneswaran
+                </p>
+                <div class="ec-editor-block" data-elementtype="spacer" style="height:40px;">
+                </div>
+                <div class="ec-editor-block" data-elementtype="button">
+                    <a class="button button-dark links-to-registration" rel="nofollow" href="/registration"
+                        onmouseout="this.style.backgroundColor='#d54343'; this.style.color='rgb(255, 255, 255)'"
+                        style="background-color: rgb(213, 67, 67); color: rgb(255, 255, 255);">
+                        RSVP Now
+                    </a>
                 </div>
                 <div class="ec-editor-block" data-elementtype="image">
                     <a rel="nofollow" href="#" class="links-to-registration">
@@ -210,7 +345,7 @@
             </div>
         </div>
     </section>
- 
+
     <section class="secondsection">
         <div class="box-main">
             <div class="secondHalf">
@@ -219,7 +354,8 @@
                 </h1>
 
                 <div class="ec-editor-block h4" data-elementtype="text"><strong>Location</strong></div>
-                <div class="ec-editor-block p" data-elementtype="text">Chinese Cultural Centre<br>5183 Sheppard Ave E, Scarborough ON, Canada</div>
+                <div class="ec-editor-block p" data-elementtype="text">Chinese Cultural Centre<br>5183 Sheppard Ave E,
+                    Scarborough ON, Canada</div>
 
                 <div class="ec-editor-block" data-elementtype="spacer" style="height:20px;"></div>
 
@@ -228,244 +364,93 @@
 
 
                 <p class="text-small">
-                    <div class="google-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2879.949706010915!2d-79.23636982332!3d43.79465664326961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d0e7d9e874b1%3A0xe93a7f845cc0198c!2sChinese%20Cultural%20Centre%20Of%20Greater%20Toronto!5e0!3m2!1sen!2sca!4v1689808048556!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                    <style>
-                        .google-map {
-                            padding-bottom: 100%;
-                            position: relative;
-                        }
-
-                        .google-map iframe {
-                            height: 150%;
-                            width: 300%;
-                            filter: invert(100%);
-                            left: 0;
-                            top: 0;
-                            position: absolute;
-                        }
-                    </style>
+                <div class="google-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2879.949706010915!2d-79.23636982332!3d43.79465664326961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d0e7d9e874b1%3A0xe93a7f845cc0198c!2sChinese%20Cultural%20Centre%20Of%20Greater%20Toronto!5e0!3m2!1sen!2sca!4v1689808048556!5m2!1sen!2sca"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
                 </p>
- 
- 
+
+
             </div>
         </div>
     </section>
- 
+
     <section class="section">
         <div class="paras">
             <h1 class="sectionTag text-big">RSVP</h1>
- 
+
             <p class="sectionSubTag text-small">
-                <div class="formbold-main-wrapper">
-                    <!-- Author: FormBold Team -->
-                    <!-- Learn More: https://formbold.com -->
-                    <div class="formbold-form-wrapper">
-                      <form action="" id="submitRSVP">
+            <div class="formbold-main-wrapper">
+                <!-- Author: FormBold Team -->
+                <!-- Learn More: https://formbold.com -->
+                <div class="formbold-form-wrapper">
+                    <form action="" id="submitRSVP">
                         <div class="flex flex-wrap formbold--mx-3">
-                          <div class="w-full sm:w-half formbold-px-3">
-                            <div class="formbold-mb-5">
-                              <label for="fName" class="formbold-form-label"> First Name </label>
-                              <input
-                                type="text"
-                                name="fName"
-                                id="fName"
-                                placeholder="First Name"
-                                class="formbold-form-input"
-                              />
+                            <div class="w-full sm:w-half formbold-px-3">
+                                <div class="formbold-mb-5">
+                                    <label for="fName" class="formbold-form-label"> First Name </label>
+                                    <input type="text" name="fName" id="fName" placeholder="First Name"
+                                        class="formbold-form-input" />
+                                </div>
                             </div>
-                          </div>
-                          <div class="w-full sm:w-half formbold-px-3">
-                            <div class="formbold-mb-5">
-                              <label for="lName" class="formbold-form-label"> Last Name </label>
-                              <input
-                                type="text"
-                                name="lName"
-                                id="lName"
-                                placeholder="Last Name"
-                                class="formbold-form-input"
-                              />
+                            <div class="w-full sm:w-half formbold-px-3">
+                                <div class="formbold-mb-5">
+                                    <label for="lName" class="formbold-form-label"> Last Name </label>
+                                    <input type="text" name="lName" id="lName" placeholder="Last Name"
+                                        class="formbold-form-input" />
+                                </div>
                             </div>
-                          </div>
                         </div>
-                  
-                        <div class="formbold-mb-5">
-                            <div class="formbold-mb-5">
-                              <label for="email" class="formbold-form-label"> E-mail </label>
-                              <input
-                                type="text"
-                                name="email"
-                                id="email"
-                                placeholder="E-mail"
-                                class="formbold-form-input"
-                              />
-                            </div>
 
                         <div class="formbold-mb-5">
-                          <label for="guest" class="formbold-form-label">
-                            How many guests are attending?
-                          </label>
-                          <input
-                            type="number"
-                            name="guest"
-                            id="guest"
-                            placeholder="1"
-                            class="formbold-form-input"
-                          />
-                        </div>
-                        <label for="guest" class="formbold-form-label">
-                            Are you attending?
-                          </label>
-                        <div class="flex formbold-mb-5">
-                          <div class="flex">
-                            <input
-                              type="radio"
-                              name="radio1"
-                              id="radioButton1"
-                              class="formbold-radio"
-                            />
-                            <label for="radioButton1" class="formbold-radio-label"> Yes </label>
-                          </div>
-                          <div class="flex">
-                            <input
-                              type="radio"
-                              name="radio1"
-                              id="radioButton2"
-                              class="formbold-radio"
-                            />
-                            <label for="radioButton2" class="formbold-radio-label"> No </label>
-                          </div>
-                        </div>
-                  
-                        <div>
-                          <button class="formbold-btn">Submit</button>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                  <style>
-                    * {
-                      margin: 0;
-                      padding: 0;
-                      box-sizing: border-box;
-                    }
-                    body {
-                      font-family: "Inter", sans-serif;
-                    }
-                    .formbold-mb-5 {
-                      margin-bottom: 20px;
-                    }
-                    .formbold-pt-3 {
-                      padding-top: 12px;
-                    }
-                    .formbold-main-wrapper {
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      padding: 48px;
-                    }
-                  
-                    .formbold-form-wrapper {
-                      margin: 0 auto;
-                      max-width: 550px;
-                      width: 100%;
-                      background: white;
-                    }
-                    .formbold-form-label {
-                      display: block;
-                      font-weight: 500;
-                      font-size: 16px;
-                      color: #07074d;
-                      margin-bottom: 12px;
-                    }
-                    .formbold-form-label-2 {
-                      font-weight: 600;
-                      font-size: 20px;
-                      margin-bottom: 20px;
-                    }
-                  
-                    .formbold-form-input {
-                      width: 100%;
-                      padding: 12px 24px;
-                      border-radius: 6px;
-                      border: 1px solid #e0e0e0;
-                      background: white;
-                      font-weight: 500;
-                      font-size: 16px;
-                      color: #6b7280;
-                      outline: none;
-                      resize: none;
-                    }
-                    .formbold-form-input:focus {
-                      border-color: #d54343;
-                      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
-                    }
-                  
-                    .formbold-btn {
-                      text-align: center;
-                      font-size: 16px;
-                      border-radius: 6px;
-                      padding: 14px 32px;
-                      border: none;
-                      font-weight: 600;
-                      background-color: #d54343;
-                      color: white;
-                      cursor: pointer;
-                    }
-                    .formbold-btn:hover {
-                      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
-                    }
-                  
-                    .formbold--mx-3 {
-                      margin-left: -12px;
-                      margin-right: -12px;
-                    }
-                    .formbold-px-3 {
-                      padding-left: 12px;
-                      padding-right: 12px;
-                    }
-                    .flex {
-                      display: flex;
-                    }
-                    .flex-wrap {
-                      flex-wrap: wrap;
-                    }
-                    .w-full {
-                      width: 100%;
-                    }
-                    .formbold-radio {
-                      width: 20px;
-                      height: 20px;
-                    }
-                    .formbold-radio-label {
-                      font-weight: 500;
-                      font-size: 16px;
-                      padding-left: 12px;
-                      color: #070707;
-                      padding-right: 20px;
-                    }
-                    @media (min-width: 540px) {
-                      .sm\:w-half {
-                        width: 50%;
-                      }
-                    }
-                  </style>
- 
+                            <div class="formbold-mb-5">
+                                <label for="email" class="formbold-form-label"> E-mail </label>
+                                <input type="text" name="email" id="email" placeholder="E-mail"
+                                    class="formbold-form-input" />
+                            </div>
+
+                            <div class="formbold-mb-5">
+                                <label for="guest" class="formbold-form-label">
+                                    How many guests are attending?
+                                </label>
+                                <input type="number" name="guest" id="guest" placeholder="1"
+                                    class="formbold-form-input" />
+                            </div>
+                            <label for="guest" class="formbold-form-label">
+                                Are you attending?
+                            </label>
+                            <div class="flex formbold-mb-5">
+                                <div class="flex">
+                                    <input type="radio" name="radio1" id="radioButton1" class="formbold-radio" />
+                                    <label for="radioButton1" class="formbold-radio-label"> Yes </label>
+                                </div>
+                                <div class="flex">
+                                    <input type="radio" name="radio1" id="radioButton2" class="formbold-radio" />
+                                    <label for="radioButton2" class="formbold-radio-label"> No </label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <button class="formbold-btn">Submit</button>
+                            </div>
+                    </form>
+                </div>
+            </div>
         </div>
- 
+
         <div class="thumbnail">
             <img src="img.png" alt="laptop image">
         </div>
     </section>
- 
+
     <footer class="background">
         <p class="text-footer">
             Copyright ©-All rights are reserved
         </p>
- 
- 
+
     </footer>
 </body>
- 
+
 </html>

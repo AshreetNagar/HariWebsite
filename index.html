@@ -1,459 +1,581 @@
 <!DOCTYPE html>
-
 <html>
+<html lang="en">
 
 <head>
-    <title>Hariharan & Harini Tharmasothy's Arrangetrum</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap Simple Success Confirmation Popup</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <head>
+    <title>Hari & Harini's Arrangetrum</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-</head>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
+      }
+    </style>
+  </head>
 
-<style>
-    * {
-        margin: 0;
-        padding: 0;
+  <style>
+    .intro-section {
+      background-color: black;
+      /* height: 750px; */
+      height: 53vw;
+      background-image: url('images/2BK02806.JPG');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 108%;
     }
 
+    .intro-text {
+      text-align: start;
+      padding: 17%;
+      padding-inline-start: 5%;
+      color: aliceblue;
+      font-size: xx-large;
+      font-style: oblique;
+      font-weight: bold;
+      font-family: 'Times New Roman', Times, serif;
 
-    .background {
-        background: black;
-        background-blend-mode: darken;
-        background-size: cover;
     }
 
-
-    .firstsection {
-        background-color: black;
-        height: 800px;
+    .location-section {
+      background-color: rgb(117, 27, 27);
+      /* height: 800px; */
+      height: 53vw;
     }
 
-    .secondsection {
-        background-color: rgb(213, 67, 67);
-        height: 800px;
+    .location-text-column {
+      text-align: start;
+      padding: 17%;
+      padding-inline-start: 13%;
+      color: aliceblue;
+      font-size: x-large;
+      font-style: oblique;
+      font-weight: bold;
+      font-family: 'Times New Roman', Times, serif;
+      line-height: 1.5;
+      margin-top: 12.5%;
     }
 
-    .box-main {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: whitesmoke;
-        max-width: 80%;
-        margin: auto;
-        height: 80%;
+    /* style for column in location*/
+    .column {
+      float: left;
+      width: 50%;
     }
 
-    .firsthalf {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
     }
 
-    .secondhalf {
-        width: 30%;
-    }
-
-    .secondhalf img {
-        width: 70%;
-        border: 4px solid white;
-        border-radius: 150px;
-        display: block;
-        margin: auto;
-    }
-
-    .text-big {
-        font-family: 'Piazzolla', serif;
-        font-weight: bold;
-        font-size: 35px;
-    }
-
-    .text-small {
-        font-size: 18px;
-    }
-
-    .btn {
-        padding: 8px 20px;
-        margin: 7px 0;
-        border: 2px solid white;
-        border-radius: 8px;
-        background: none;
-        color: white;
-        cursor: pointer;
-    }
-
-    .btn-sm {
-        padding: 6px 10px;
-        vertical-align: middle;
-    }
-
-    .section {
-        height: 800px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        max-width: 90%;
-        margin: auto;
-    }
-
-    .section-Left {
-        flex-direction: row-reverse;
-    }
-
-    .paras {
-        padding: 0px 65px;
-    }
-
-    .thumbnail img {
-        width: 250px;
-        border: 2px solid whitesmoke;
-        border-radius: 26px;
-        margin-top: 19px;
-    }
-
-    .center {
-        text-align: center;
-    }
-
-    .text-footer {
-        text-align: center;
-        padding: 30px 0;
-        font-family: 'Ubuntu', sans-serif;
-        display: flex;
-        justify-content: center;
-        color: white;
-    }
- /* RSVP Button */
-    .button {
-        background-color: #d54343;
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-    }
-/* Google Maps */
     .google-map {
-        padding-bottom: 100%;
-        position: relative;
+      padding-bottom: 100%;
+      position: relative;
     }
 
     .google-map iframe {
-        height: 150%;
-        width: 300%;
-        filter: invert(100%);
-        left: 0;
-        top: 0;
-        position: absolute;
+      height: 75%;
+      width: 85%;
+      filter: invert(100%);
+      margin-top: 12.5%;
+      position: absolute;
     }
-/* RSVP Section */
+
+    .button-div {
+      background-color: rgb(117, 27, 27);
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      position: relative;
+      left: 20%;
+      top: -25%;
+    }
+
+    .button {
+      background-color: rgb(117, 27, 27);
+      color: white;
+      font-size: 16px;
+    }
+
+    /* background-color: rgb(117, 27, 27);
+      border: none;
+      text-decoration-color: rgb(117, 27, 27);
+      padding: 15px 32px;
+      text-align: justify;
+      display: inline-block;
+      font-size: 16px;
+      position: relative;
+      left: 20%;
+      top: -30%; */
+
+    .rsvp-section {
+      background-color: white;
+      height: 800px;
+    }
+
+    .rsvp-header-text {
+      text-align: center;
+      color: black;
+      font-size: large;
+      font-weight: bold;
+      font-family: 'Times New Roman', Times, serif;
+
+    }
+
+    .rsvp-form-text {
+      text-align: start;
+      color: black;
+      font-size: medium;
+      font-weight: bold;
+      font-family: 'Times New Roman', Times, serif;
+
+    }
+
+    .invite-section {
+      background-color: black;
+      height: 800px;
+      background-image: url('images/2BK02822.JPG');
+      background-size: 100% 102%;
+    }
+
+    .invite-text {
+      text-align: center;
+      padding: 17%;
+      padding-inline-start: 13%;
+      color: aliceblue;
+      font-size: xx-large;
+      font-style: oblique;
+      font-weight: bold;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .cp-section {
+      background-color: black;
+      height: 50px;
+      color: aliceblue;
+      text-align: center;
+      padding: 0.5%;
+    }
+
     * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-        font-family: "Inter", sans-serif;
+      font-family: "Inter", sans-serif;
     }
 
     .formbold-mb-5 {
-        margin-bottom: 20px;
+      margin-bottom: 20px;
     }
 
     .formbold-pt-3 {
-        padding-top: 12px;
+      padding-top: 12px;
     }
 
     .formbold-main-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px;
     }
 
     .formbold-form-wrapper {
-        margin: 0 auto;
-        max-width: 550px;
-        width: 100%;
-        background: white;
+      margin: 0 auto;
+      max-width: 550px;
+      width: 100%;
+      background: white;
     }
 
     .formbold-form-label {
-        display: block;
-        font-weight: 500;
-        font-size: 16px;
-        color: #07074d;
-        margin-bottom: 12px;
+      display: block;
+      font-weight: 500;
+      font-size: 16px;
+      color: #07074d;
+      margin-bottom: 12px;
     }
 
     .formbold-form-label-2 {
-        font-weight: 600;
-        font-size: 20px;
-        margin-bottom: 20px;
+      font-weight: 600;
+      font-size: 20px;
+      margin-bottom: 20px;
     }
 
     .formbold-form-input {
-        width: 100%;
-        padding: 12px 24px;
-        border-radius: 6px;
-        border: 1px solid #e0e0e0;
-        background: white;
-        font-weight: 500;
-        font-size: 16px;
-        color: #6b7280;
-        outline: none;
-        resize: none;
+      width: 100%;
+      padding: 12px 24px;
+      border-radius: 6px;
+      border: 1px solid #e0e0e0;
+      background: white;
+      font-weight: 500;
+      font-size: 16px;
+      color: #6b7280;
+      outline: none;
+      resize: none;
     }
 
     .formbold-form-input:focus {
-        border-color: #d54343;
-        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+      border-color: #d54343;
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
     }
 
     .formbold-btn {
-        text-align: center;
-        font-size: 16px;
-        border-radius: 6px;
-        padding: 14px 32px;
-        border: none;
-        font-weight: 600;
-        background-color: #d54343;
-        color: white;
-        cursor: pointer;
+      text-align: center;
+      font-size: 16px;
+      border-radius: 6px;
+      padding: 14px 32px;
+      border: none;
+      font-weight: 600;
+      background-color: #d54343;
+      color: white;
+      cursor: pointer;
     }
 
     .formbold-btn:hover {
-        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
     }
 
     .formbold--mx-3 {
-        margin-left: -12px;
-        margin-right: -12px;
+      margin-left: -12px;
+      margin-right: -12px;
     }
 
     .formbold-px-3 {
-        padding-left: 12px;
-        padding-right: 12px;
+      padding-left: 12px;
+      padding-right: 12px;
     }
 
     .flex {
-        display: flex;
+      display: flex;
     }
 
     .flex-wrap {
-        flex-wrap: wrap;
+      flex-wrap: wrap;
     }
 
     .w-full {
-        width: 100%;
+      width: 100%;
     }
 
     .formbold-radio {
-        width: 20px;
-        height: 20px;
+      width: 20px;
+      height: 20px;
     }
 
     .formbold-radio-label {
-        font-weight: 500;
-        font-size: 16px;
-        padding-left: 12px;
-        color: #070707;
-        padding-right: 20px;
+      font-weight: 500;
+      font-size: 16px;
+      padding-left: 12px;
+      color: #070707;
+      padding-right: 20px;
     }
 
     @media (min-width: 540px) {
-        .sm\:w-half {
-            width: 50%;
-        }
+      .sm\:w-half {
+        width: 50%;
+      }
     }
-</style>
+
+    /* Confirmation Pop-up */
+    body {
+      font-family: 'Varela Round', sans-serif;
+    }
+
+    .modal-confirm {
+      color: #636363;
+      width: 325px;
+    }
+
+    .modal-confirm .modal-content {
+      padding: 20px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .modal-confirm .modal-header {
+      border-bottom: none;
+      position: relative;
+    }
+
+    .modal-confirm h4 {
+      text-align: center;
+      font-size: 26px;
+      margin: 30px 0 -15px;
+    }
+
+    .modal-confirm .form-control,
+    .modal-confirm .btn {
+      min-height: 40px;
+      border-radius: 3px;
+    }
+
+    .modal-confirm .close {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+    }
+
+    .modal-confirm .modal-footer {
+      border: none;
+      text-align: center;
+      border-radius: 5px;
+      font-size: 13px;
+    }
+
+    .modal-confirm .icon-box {
+      color: #fff;
+      position: absolute;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      top: -70px;
+      width: 95px;
+      height: 95px;
+      border-radius: 50%;
+      z-index: 9;
+      background: #82ce34;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .modal-confirm .icon-box i {
+      font-size: 58px;
+      position: relative;
+      top: 3px;
+    }
+
+    .modal-confirm.modal-dialog {
+      margin-top: 80px;
+    }
+
+    .modal-confirm .btn {
+      color: #fff;
+      border-radius: 4px;
+      background: #d54343;
+      text-decoration: none;
+      transition: all 0.4s;
+      line-height: normal;
+      border: none;
+    }
+
+    .modal-confirm .btn:hover,
+    .modal-confirm .btn:focus {
+      background: #d54343;
+      outline: none;
+    }
+
+    .trigger-btn {
+      display: inline-block;
+      margin: 100px auto;
+    }
+  </style>
 
 
 <body>
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
-        import { getFirestore, collection, getDocs, addDoc, doc } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"
-        
-        scrollToRSVP.addEventListener("click", (e) => {
-            var i = 10;
-            var int = setInterval(function() {
-                window.scrollTo(0, i);
-                i += 50;
-                if (i >= 1650) clearInterval(int);
-            }, 20);
-        });
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+    import { getFirestore, collection, getDocs, addDoc, doc } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"
 
-        submitRSVP.addEventListener("submit", (e) => {
-            e.preventDefault();
-            let firstName = document.getElementById("fName");
-            let lastName = document.getElementById("lName");
-            let email = document.getElementById("email");
-            let guest = document.getElementById("guest");
-            let radioButton1 = document.getElementById("radioButton1");
-            let radioButton2 = document.getElementById("radioButton2");
-            let areYouAttending = true;
-            if (radioButton2.checked) {
-                areYouAttending = false;
-            }
-            let formData = {
-                "Email": email.value,
-                "FirstName": firstName.value,
-                "GuestAmount": guest.value,
-                "LastName": lastName.value,
-                "AreYouAttending": areYouAttending
-            }
-            console.log(formData)
-            const firebaseConfig = {
-                apiKey: "AIzaSyDYO2tF1IzGtrKoyQCMJmosPUtYhUTe7ZA",
-                authDomain: "hariwebsite-d5d9b.firebaseapp.com",
-                projectId: "hariwebsite-d5d9b",
-                storageBucket: "hariwebsite-d5d9b.appspot.com",
-                messagingSenderId: "376065488204",
-                appId: "1:376065488204:web:dc8acb5d35ed4ebab6cbe9"
-            };
-            const db = getFirestore(initializeApp(firebaseConfig));
-            const ref = collection(db, "RSVPInfo");
-            addDoc(ref, formData)
-        });
-    </script>
+    scrollToRSVP.addEventListener("click", (e) => {
+      var i = 10;
+      var int = setInterval(function () {
+        window.scrollTo(0, i);
+        i += 50;
+        if (i >= 1600) clearInterval(int);
+      }, 20);
+    });
+
+    submitRSVP.addEventListener("submit", (e) => {
+      e.preventDefault();
+      let firstName = document.getElementById("fName");
+      let lastName = document.getElementById("lName");
+      let email = document.getElementById("email");
+      let guest = document.getElementById("guest");
+      let radioButton1 = document.getElementById("radioButton1");
+      let radioButton2 = document.getElementById("radioButton2");
+      let areYouAttending = true;
+      if (radioButton2.checked)
+        areYouAttending = false;
+      let formData = {
+        "Email": email.value,
+        "FirstName": firstName.value,
+        "GuestAmount": guest.value,
+        "LastName": lastName.value,
+        "AreYouAttending": areYouAttending
+      }
+      console.log(formData)
+      const firebaseConfig = {
+        apiKey: "AIzaSyDYO2tF1IzGtrKoyQCMJmosPUtYhUTe7ZA",
+        authDomain: "hariwebsite-d5d9b.firebaseapp.com",
+        projectId: "hariwebsite-d5d9b",
+        storageBucket: "hariwebsite-d5d9b.appspot.com",
+        messagingSenderId: "376065488204",
+        appId: "1:376065488204:web:dc8acb5d35ed4ebab6cbe9"
+      };
+      const db = getFirestore(initializeApp(firebaseConfig));
+      const ref = collection(db, "RSVPInfo");
+      addDoc(ref, formData)
+    });
+  </script>
+  <div>
+    <div class="intro-section">
+      <div class="intro-text">
+        <h1>Hariharan & Harini's</h1>
+        <h1>Bharathanatyam Arangetram</h1>
+        <p>Kalai Aruvi Academy of Fine Arts</p>
+        <p>Diciples of Renuka Vigeneswaran</p>
+      </div>
+      <div class="button-div">
+        <button class="button" id="scrollToRSVP" style="cursor: pointer;">RSVP
+          Now</button>
+      </div>
+      <div class="ec-editor-block" data-elementtype="image">
+        <a rel="nofollow" href="#" class="links-to-registration"></a>
+      </div>
+
+    </div>
 
 
-    <section class="firstsection">
-        <div class="box-main">
-            <div class="firstHalf">
-                <h1 class="text-big" id="web">
-                    Hariharan & Harini Tharmasothy's
-                </h1>
-                <h1 class="text-big" id="web">
-                    Bharathanatya Arangetram
-                </h1>
-
-                <p class="text-small">
-                    Student of Kalai Aruvi Academy of Fine Arts
-                </p>
-                <p class="text-small">
-                    Diciple of Renuka Vigeneswaran
-                </p>
-                <div class="ec-editor-block" data-elementtype="spacer" style="height:40px;">
-                </div>
-                <div class="ec-editor-block" data-elementtype="button">
-                    <button class="button button-dark links-to-registration" id="scrollToRSVP" style="cursor: pointer;">RSVP Now</button>
-                </div>
-                <div class="ec-editor-block" data-elementtype="image">
-                    <a rel="nofollow" href="#" class="links-to-registration"></a>
-                </div>
-            </div>
+    <div class="location-section">
+      <div class="row">
+        <div class="column">
+          <div class="location-text-column">
+            <h2>Location</h2>
+            <p>Chinese Cultural Center of Greater Toronto</p>
+            <p>5183 Sheppard Ave E, </p>
+            <p>Scarborough, ON M1B 5Z5</p>
+            <br> <br>
+            <h2>Date & Time</h2>
+            <p>August 19, 2023 </p>
+            <p>5:00 PM - 11:00 PM EST</p>
+          </div>
         </div>
-    </section>
-
-    <section class="secondsection">
-        <div class="box-main">
-            <div class="secondHalf">
-                <h1 class="text-big" id="program">
-                    Location
-                </h1>
-
-                <div class="ec-editor-block h4" data-elementtype="text"><strong>Location</strong></div>
-                <div class="ec-editor-block p" data-elementtype="text">Chinese Cultural Centre<br>5183 Sheppard Ave E,
-                    Scarborough ON, Canada</div>
-
-                <div class="ec-editor-block" data-elementtype="spacer" style="height:20px;"></div>
-
-                <div class="ec-editor-block h4" data-elementtype="text"><strong>Date &amp; Time</strong></div>
-                <div class="ec-editor-block p" data-elementtype="text">August 19, 2023<br>5:00 PM - 11:00 PM</div>
-
-
-                <p class="text-small">
-                <div class="google-map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2879.949706010915!2d-79.23636982332!3d43.79465664326961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d0e7d9e874b1%3A0xe93a7f845cc0198c!2sChinese%20Cultural%20Centre%20Of%20Greater%20Toronto!5e0!3m2!1sen!2sca!4v1689808048556!5m2!1sen!2sca"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                </p>
-
-
-            </div>
+        <div class="column">
+          <div class="google-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2879.949706010915!2d-79.23636982332!3d43.79465664326961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d0e7d9e874b1%3A0xe93a7f845cc0198c!2sChinese%20Cultural%20Centre%20Of%20Greater%20Toronto!5e0!3m2!1sen!2sca!4v1689808048556!5m2!1sen!2sca"
+              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <section class="section">
-        <div class="paras">
-            <h1 class="sectionTag text-big">RSVP</h1>
+    </div>
 
-            <p class="sectionSubTag text-small">
-            <div class="formbold-main-wrapper">
-                <!-- Author: FormBold Team -->
-                <!-- Learn More: https://formbold.com -->
-                <div class="formbold-form-wrapper">
-                    <form action="" id="submitRSVP">
-                        <div class="flex flex-wrap formbold--mx-3">
-                            <div class="w-full sm:w-half formbold-px-3">
-                                <div class="formbold-mb-5">
-                                    <label for="fName" class="formbold-form-label"> First Name </label>
-                                    <input type="text" name="fName" id="fName" placeholder="First Name"
-                                        class="formbold-form-input" />
-                                </div>
-                            </div>
-                            <div class="w-full sm:w-half formbold-px-3">
-                                <div class="formbold-mb-5">
-                                    <label for="lName" class="formbold-form-label"> Last Name </label>
-                                    <input type="text" name="lName" id="lName" placeholder="Last Name"
-                                        class="formbold-form-input" />
-                                </div>
-                            </div>
+
+
+    <div class="rsvp-section">
+      <div class="formbold-main-wrapper">
+        <!-- Author: FormBold Team -->
+        <!-- Learn More: https://formbold.com -->
+        <div class="formbold-form-wrapper">
+          <div class="rsvp-header-text">
+            <h1> RSVP </h1>
+          </div>
+          <div class="rsvp-form-text">
+            <form action="" id="submitRSVP">
+              <div class="flex flex-wrap formbold--mx-3">
+                <div class="w-full sm:w-half formbold-px-3">
+                  <div class="formbold-mb-5">
+                    <label for="fName" class="formbold-form-label"> First Name </label>
+                    <input type="text" name="fName" id="fName" placeholder="First Name" class="formbold-form-input" />
+                  </div>
+                </div>
+                <div class="w-full sm:w-half formbold-px-3">
+                  <div class="formbold-mb-5">
+                    <label for="lName" class="formbold-form-label"> Last Name </label>
+                    <input type="text" name="lName" id="lName" placeholder="Last Name" class="formbold-form-input" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="formbold-mb-5">
+                <div class="formbold-mb-5">
+                  <label for="email" class="formbold-form-label"> E-mail </label>
+                  <input type="text" name="email" id="email" placeholder="E-mail" class="formbold-form-input" />
+                </div>
+
+                <div class="formbold-mb-5">
+                  <label for="guest" class="formbold-form-label">
+                    How many guests are attending?
+                  </label>
+                  <input type="number" min="0" name="guest" id="guest" value="1" class="formbold-form-input" />
+                </div>
+                <label for="guest" class="formbold-form-label">
+                  Are you attending?
+                </label>
+                <div class="flex formbold-mb-5">
+                  <div class="flex">
+                    <input type="radio" name="radio1" id="radioButton1" class="formbold-radio" />
+                    <label for="radioButton1" class="formbold-radio-label"> Yes </label>
+                  </div>
+                  <div class="flex">
+                    <input type="radio" name="radio1" id="radioButton2" class="formbold-radio" />
+                    <label for="radioButton2" class="formbold-radio-label"> No </label>
+                  </div>
+                </div>
+
+                <div>
+                  <a href="#myModal" class="trigger-btn" data-toggle="modal"><button
+                      class="formbold-btn">Submit</button></a>
+                </div>
+                <!-- Modal HTML -->
+                <div id="myModal" class="modal fade">
+                  <div class="modal-dialog modal-confirm">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <div class="icon-box">
+                          <i class="material-icons">&#xE876;</i>
                         </div>
-
-                        <div class="formbold-mb-5">
-                            <div class="formbold-mb-5">
-                                <label for="email" class="formbold-form-label"> E-mail </label>
-                                <input type="text" name="email" id="email" placeholder="E-mail"
-                                    class="formbold-form-input" />
-                            </div>
-
-                            <div class="formbold-mb-5">
-                                <label for="guest" class="formbold-form-label">
-                                    How many guests are attending?
-                                </label>
-                                <input type="number" name="guest" id="guest" placeholder="1"
-                                    class="formbold-form-input" />
-                            </div>
-                            <label for="guest" class="formbold-form-label">
-                                Are you attending?
-                            </label>
-                            <div class="flex formbold-mb-5">
-                                <div class="flex">
-                                    <input type="radio" name="radio1" id="radioButton1" class="formbold-radio" />
-                                    <label for="radioButton1" class="formbold-radio-label"> Yes </label>
-                                </div>
-                                <div class="flex">
-                                    <input type="radio" name="radio1" id="radioButton2" class="formbold-radio" />
-                                    <label for="radioButton2" class="formbold-radio-label"> No </label>
-                                </div>
-                            </div>
-
-                            <div>
-                                <button class="formbold-btn">Submit</button>
-                            </div>
-                    </form>
+                        <h4 class="modal-title">Awesome!</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p class="text-center">Your booking has been confirmed. Check your email for detials.</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-            </div>
+              </div>
+            </form>
+          </div>
         </div>
+      </div>
 
-        <div class="thumbnail">
-            <img src="img.png" alt="laptop image">
+
+      <div class="invite-section">
+        <div class="invite-text">
+          <h3>We look forward to seeing you!</h3>
         </div>
-    </section>
+      </div>
 
-    <footer class="background">
-        <p class="text-footer">
-            Copyright ©-All rights are reserved
-        </p>
-
-    </footer>
+      <div class="cp-section">
+        <p>Copyright ©-All rights are reserved</p>
+      </div>
+    </div>
 </body>
 
 </html>

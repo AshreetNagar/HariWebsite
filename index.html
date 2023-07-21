@@ -154,11 +154,12 @@
 
     .invite-section {
       background-color: black;
-      height: 53vw;
+      /* height: 53vw; */
+      aspect-ratio: 3/2;
       width: 100%;
       background-image: url('images/2BK02822.JPG');
       background-repeat: no-repeat;
-      background-attachment: fixed;
+      background-attachment: scroll;
       background-size: 100% 100%;
     }
 
@@ -409,6 +410,7 @@
     $('#fNameError').hide()
     $('#lNameError').hide()
     $('#emailError').hide()
+    document.getElementsByClassName("invite-section")[0].style.height = (window.innerWidth*(6336/9504)) + 100
     scrollToRSVP.addEventListener("click", (e) => {
       var i = 10;
       var int = setInterval(function () {

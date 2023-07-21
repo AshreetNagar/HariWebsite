@@ -131,13 +131,16 @@
 
     .rsvp-section {
       background-color: white;
-      height: 800px;
+      /* height: 800px; */
+      height: 100vh;
     }
 
     .rsvp-header-text {
       text-align: center;
       color: black;
-      font-size: large;
+      height: auto;
+      /* font-size: large; */
+      font-size: 5vh;
       font-weight: bold;
       font-family: 'Times New Roman', Times, serif;
 
@@ -207,19 +210,23 @@
       align-items: center;
       justify-content: center;
       padding: 48px;
+      height: 100vh;
+      position: relative;
+      margin: 0 auto;
     }
 
     .formbold-form-wrapper {
       margin: 0 auto;
-      max-width: 550px;
+      max-width: 30vw;
       width: 100%;
+      height: 100vh;
       background: white;
     }
 
     .formbold-form-label {
       display: block;
       font-weight: 500;
-      font-size: 16px;
+      font-size: 3vh;
       color: #07074d;
       margin-bottom: 12px;
     }
@@ -237,7 +244,7 @@
       border: 1px solid #e0e0e0;
       background: white;
       font-weight: 500;
-      font-size: 16px;
+      font-size: 2vh;
       color: #6b7280;
       outline: none;
       resize: none;
@@ -287,13 +294,14 @@
     }
 
     .formbold-radio {
-      width: 20px;
-      height: 20px;
+      width: 3vh;
+      /* width: 20px; */
+      /* height: 20px; */
     }
 
     .formbold-radio-label {
       font-weight: 500;
-      font-size: 16px;
+      font-size: 3vh;
       padding-left: 12px;
       color: #070707;
       padding-right: 20px;
@@ -514,7 +522,7 @@
         <!-- Learn More: https://formbold.com -->
         <div class="formbold-form-wrapper">
           <div class="rsvp-header-text">
-            <h1> RSVP </h1>
+            <p> RSVP </p>
           </div>
           <div class="rsvp-form-text">
             <form action="" id="submitRSVP">

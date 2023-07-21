@@ -423,7 +423,7 @@
       }
 
       .location-section {
-        height: 130vh;
+        height: fit-content;
       }
 
       .location-text-column {
@@ -486,7 +486,27 @@
       .trigger-btn{
         margin: 1vh auto;
       }
+      
+      .location-text-subtitle{
+        display: flex;
+        align-items: center;
+        font-size: 5vw;
+        flex-direction: column;
+      }
 
+      .location-text-info{
+        display: flex;
+        align-items: center;
+        font-size: 5vw;
+        flex-direction: column;
+      }
+
+      .row{
+        width: 100vw;
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden
+      }
     }
 
   </style>
@@ -577,14 +597,14 @@
       <div class="row">
         <div class="column">
           <div class="location-text-column">
-            <p>Location</p>
-            <h2>Chinese Cultural Center of Greater Toronto</h2>
-            <h2>5183 Sheppard Ave E, </h2>
-            <h2>Scarborough, ON M1B 5Z5</h2>
+            <p class="location-text-subtitle">Location</p>
+            <h2 class="location-text-info">Chinese Cultural Center of Greater Toronto</h2>
+            <h2 class="location-text-info">5183 Sheppard Ave E, </h2>
+            <h2 class="location-text-info">Scarborough, ON M1B 5Z5</h2>
             <br> <br>
-            <p>Date & Time</p>
-            <h2>August 19, 2023 </h2>
-            <h2>5:00 PM - 11:00 PM EST</h2>
+            <p class="location-text-subtitle">Date & Time</p>
+            <h2 class="location-text-info">August 19, 2023 </h2>
+            <h2 class="location-text-info">5:00 PM - 11:00 PM EST</h2>
           </div>
         </div>
         <div class="column">

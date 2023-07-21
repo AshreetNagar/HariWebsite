@@ -406,7 +406,7 @@
       }, 20);
     });
 
-    submitRSVP.addEventListener("submit", (e) => {
+    submitRSVPButton.addEventListener("click", (e) => {
       e.preventDefault();
       let firstName = document.getElementById("fName");
       let lastName = document.getElementById("lName");
@@ -538,7 +538,8 @@
 
                 <div>
                   <a href="#myModal" class="trigger-btn" data-toggle="modal"><button
-                      class="formbold-btn">Submit</button></a>
+                      class="formbold-btn" id="submitRSVPButton">Submit</button></a>
+                  
                 </div>
                 <!-- Modal HTML -->
                 <div id="myModal" class="modal fade">

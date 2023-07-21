@@ -388,6 +388,64 @@
       display: inline-block;
       margin: 100px auto;
     }
+
+
+    @media (max-width: 540px){
+    .intro-section {
+      height: 100vh;
+    }
+
+    .intro-text {
+      font-size: 5vw;
+    }
+
+    .button-div {
+      position: static;
+    }
+
+    .location-section {
+      height: 130vh;
+    }
+
+    .location-text-column {
+      text-align: start;
+      padding: 17%;
+      padding-inline-start: 13%;
+      /* font-size: x-large; */
+      font-size: 5vw;
+      line-height: 1.5;
+      margin-top: 12.5%;
+    }
+
+    .rsvp-section{
+      position: absolute;
+    }
+
+    .invite-section {
+      height: 90vh;
+    }
+    .invite-text {
+      font-size: 5vw;
+    }
+
+    .column{
+      float: left;
+      width: 100%;
+    }
+
+    .google-map iframe {
+      /* height: 75%; */
+      /* width: 85%; */
+      /* filter: invert(100%); */
+      /* margin-top: 12.5%; */
+      position: absolute;
+      left: 8vw;
+      align-items: center;
+      justify-content: center;
+    }
+
+  }
+
   </style>
 
 
@@ -444,9 +502,9 @@
         messagingSenderId: "376065488204",
         appId: "1:376065488204:web:dc8acb5d35ed4ebab6cbe9"
       };
-      const db = getFirestore(initializeApp(firebaseConfig));
-      const ref = collection(db, "RSVPInfo");
-      addDoc(ref, formData)
+      // const db = getFirestore(initializeApp(firebaseConfig));
+      // const ref = collection(db, "RSVPInfo");
+      // addDoc(ref, formData)
       $('#myModal').modal('show');
     });
   </script>
@@ -512,14 +570,14 @@
                   <div class="formbold-mb-5">
                     <label for="fName" class="formbold-form-label"> First Name </label>
                     <input type="text" name="fName" id="fName" placeholder="First Name" class="formbold-form-input" />
-                    <p style="font-size: 1rem; position: relative; color: #d54343;" id="fNameError">First name not filled in</p>
+                    <p style="font-size: 1vw; position: relative; color: #d54343;" id="fNameError">First name not filled in</p>
                   </div>
                 </div>
                 <div class="w-full sm:w-half formbold-px-3">
                   <div class="formbold-mb-5">
                     <label for="lName" class="formbold-form-label"> Last Name </label>
                     <input type="text" name="lName" id="lName" placeholder="Last Name" class="formbold-form-input" />
-                    <p style="font-size: 1rem; position: relative; color: #d54343;" id="lNameError">Last name not filled in</p>
+                    <p style="font-size: 1vw; position: relative; color: #d54343;" id="lNameError">Last name not filled in</p>
                   </div>
                 </div>
               </div>
@@ -528,7 +586,7 @@
                 <div class="formbold-mb-5">
                   <label for="email" class="formbold-form-label"> E-mail </label>
                   <input type="text" name="email" id="email" placeholder="E-mail" class="formbold-form-input" />
-                  <p style="font-size: 1rem; position: relative; color: #d54343;" id="emailError">Email not filled in</p>
+                  <p style="font-size: 1vw; position: relative; color: #d54343;" id="emailError">Email not filled in</p>
                 </div>
 
                 <div class="formbold-mb-5">

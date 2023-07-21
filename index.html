@@ -479,12 +479,14 @@
     $('#emailError').hide()
     document.getElementsByClassName("invite-section")[0].style.height = (window.innerWidth*(6336/9504)) + 100
     scrollToRSVP.addEventListener("click", (e) => {
-      var i = 10;
-      var int = setInterval(function () {
-        window.scrollTo(0, i);
-        i += 50;
-        if (i >= 1600) clearInterval(int);
-      }, 20);
+      document.getElementsByClassName("formbold-main-wrapper")[0].scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+      // var i = 10;
+      // var rsvpLocation = 1600;
+      // var int = setInterval(function () {
+      //   window.scrollTo(0, i);
+      //   i += 50;
+      //   if (i >= rsvpLocation) clearInterval(int);
+      // }, 20);
     });
 
     submitRSVPButton.addEventListener("click", (e) => {

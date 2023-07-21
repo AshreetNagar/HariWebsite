@@ -397,6 +397,9 @@
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
     import { getFirestore, collection, getDocs, addDoc, doc } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"
 
+    $('#fNameError').hide()
+    $('#lNameError').hide()
+    $('#emailError').hide()
     scrollToRSVP.addEventListener("click", (e) => {
       var i = 10;
       var int = setInterval(function () {
@@ -408,23 +411,31 @@
 
     submitRSVPButton.addEventListener("click", (e) => {
       e.preventDefault();
-      let firstName = document.getElementById("fName");
-      let lastName = document.getElementById("lName");
-      let email = document.getElementById("email");
-      let guest = document.getElementById("guest");
-      let radioButton1 = document.getElementById("radioButton1");
-      let radioButton2 = document.getElementById("radioButton2");
+      let firstName = document.getElementById("fName").value;
+      let lastName = document.getElementById("lName").value;
+      let email = document.getElementById("email").value;
+      let guest = document.getElementById("guest").value;
+      let radioButton1 = document.getElementById("radioButton1").checked;
+      let radioButton2 = document.getElementById("radioButton2").checked;
       let areYouAttending = true;
-      if (radioButton2.checked)
+      if (firstName == "" ){
+        $('#fNameError').show()
+      } if (lastName == "" ){
+        $('#lNameError').show()
+      } if (email == "" ){
+        $('#emailError').show()
+      } if (!firstName || !lastName || !email){
+        return
+      }
+      if (radioButton2)
         areYouAttending = false;
       let formData = {
-        "Email": email.value,
-        "FirstName": firstName.value,
-        "GuestAmount": guest.value,
-        "LastName": lastName.value,
+        "Email": email,
+        "FirstName": firstName,
+        "GuestAmount": guest,
+        "LastName": lastName,
         "AreYouAttending": areYouAttending
       }
-      console.log(formData)
       const firebaseConfig = {
         apiKey: "AIzaSyDYO2tF1IzGtrKoyQCMJmosPUtYhUTe7ZA",
         authDomain: "hariwebsite-d5d9b.firebaseapp.com",
@@ -436,6 +447,7 @@
       const db = getFirestore(initializeApp(firebaseConfig));
       const ref = collection(db, "RSVPInfo");
       addDoc(ref, formData)
+      $('#myModal').modal('show');
     });
   </script>
   <div>
@@ -500,12 +512,14 @@
                   <div class="formbold-mb-5">
                     <label for="fName" class="formbold-form-label"> First Name </label>
                     <input type="text" name="fName" id="fName" placeholder="First Name" class="formbold-form-input" />
+                    <p style="font-size: 1rem; position: relative; color: #d54343;" id="fNameError">First name not filled in</p>
                   </div>
                 </div>
                 <div class="w-full sm:w-half formbold-px-3">
                   <div class="formbold-mb-5">
                     <label for="lName" class="formbold-form-label"> Last Name </label>
                     <input type="text" name="lName" id="lName" placeholder="Last Name" class="formbold-form-input" />
+                    <p style="font-size: 1rem; position: relative; color: #d54343;" id="lNameError">Last name not filled in</p>
                   </div>
                 </div>
               </div>
@@ -514,6 +528,7 @@
                 <div class="formbold-mb-5">
                   <label for="email" class="formbold-form-label"> E-mail </label>
                   <input type="text" name="email" id="email" placeholder="E-mail" class="formbold-form-input" />
+                  <p style="font-size: 1rem; position: relative; color: #d54343;" id="emailError">Email not filled in</p>
                 </div>
 
                 <div class="formbold-mb-5">
@@ -527,7 +542,7 @@
                 </label>
                 <div class="flex formbold-mb-5">
                   <div class="flex">
-                    <input type="radio" name="radio1" id="radioButton1" class="formbold-radio" />
+                    <input type="radio" name="radio1" id="radioButton1" class="formbold-radio" value="" checked="checked" />
                     <label for="radioButton1" class="formbold-radio-label"> Yes </label>
                   </div>
                   <div class="flex">
@@ -537,7 +552,7 @@
                 </div>
 
                 <div>
-                  <a href="#myModal" class="trigger-btn" data-toggle="modal"><button
+                  <a class="trigger-btn" data-toggle="modal"><button
                       class="formbold-btn" id="submitRSVPButton">Submit</button></a>
                   
                 </div>

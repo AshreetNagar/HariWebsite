@@ -568,6 +568,7 @@
     $('#fNameError').hide()
     $('#lNameError').hide()
     $('#emailError').hide()
+    $('#guestError').hide()
     document.getElementsByClassName("invite-section")[0].style.height = (window.innerWidth*(6336/9504)) + 100
     scrollToRSVP.addEventListener("click", (e) => {
       document.getElementsByClassName("formbold-main-wrapper")[0].scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
@@ -580,8 +581,14 @@
       // }, 20);
     });
 
+    const errorMsgBase = `Error trying to make RSVP. Please try again. Error: `
+    function timeouterr(){
+      alert(errorMsgBase+" Timed out. Check your internet connection.")
+    }
+
     submitRSVPButton.addEventListener("click", (e) => {
       e.preventDefault();
+      const rsvpTimeout = setTimeout(timeouterr, 5000);
       let firstName = document.getElementById("fName").value;
       let lastName = document.getElementById("lName").value;
       let email = document.getElementById("email").value;
@@ -595,7 +602,9 @@
         $('#lNameError').show()
       } if (email == "" ){
         $('#emailError').show()
-      } if (!firstName || !lastName || !email){
+      } if(guest == ""){
+        $('#guestError').show()
+      }if (!firstName || !lastName || !email || (guest == "")){
         return
       }
       if (radioButton2)
@@ -615,10 +624,27 @@
         messagingSenderId: "376065488204",
         appId: "1:376065488204:web:dc8acb5d35ed4ebab6cbe9"
       };
-      const db = getFirestore(initializeApp(firebaseConfig));
-      const ref = collection(db, "RSVPInfo");
-      addDoc(ref, formData)
-      $('#myModal').modal('show');
+      try {
+        const db = getFirestore(initializeApp(firebaseConfig));
+        const ref = collection(db, "RSVPInfo");
+        addDoc(ref, formData).then(result =>{
+          if (result.path.toString().includes("RSVPInfo/")){
+            console.log("result is: "+ result.path + result.id)
+            $('#myModal').modal('show');
+            clearTimeout(rsvpTimeout)
+          }else{
+            alert(errorMsgBase+"result has path" + result.path)
+            clearTimeout(rsvpTimeout)
+          }
+          clearTimeout(rsvpTimeout)
+        }).catch((error) =>{
+          alert(errorMsgBase + error)
+          clearTimeout(rsvpTimeout)
+        })
+      } catch (err) {
+        alert(errorMsgBase + err)
+        clearTimeout(rsvpTimeout)
+      }
     });
   </script>
   <div>
@@ -708,6 +734,7 @@
                     How many guests are attending?
                   </label>
                   <input type="number" min="0" name="guest" id="guest" value="1" class="formbold-form-input" />
+                  <p style="font-size: 1rem; position: relative; color: #d54343;" id="guestError"># of guests not filled in</p>
                 </div>
                 <label for="guest" class="formbold-form-label">
                   Are you attending?

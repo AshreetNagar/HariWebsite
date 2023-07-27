@@ -581,8 +581,14 @@
       // }, 20);
     });
 
+    const errorMsgBase = `Error trying to make RSVP. Please try again. Error: `
+    function timeouterr(){
+      alert(errorMsgBase+" Timed out. Check your internet connection.")
+    }
+
     submitRSVPButton.addEventListener("click", (e) => {
       e.preventDefault();
+      const rsvpTimeout = setTimeout(timeouterr, 5000);
       let firstName = document.getElementById("fName").value;
       let lastName = document.getElementById("lName").value;
       let email = document.getElementById("email").value;
@@ -618,10 +624,27 @@
         messagingSenderId: "376065488204",
         appId: "1:376065488204:web:dc8acb5d35ed4ebab6cbe9"
       };
-      const db = getFirestore(initializeApp(firebaseConfig));
-      const ref = collection(db, "RSVPInfo");
-      addDoc(ref, formData)
-      $('#myModal').modal('show');
+      try {
+        const db = getFirestore(initializeApp(firebaseConfig));
+        const ref = collection(db, "RSVPInfo");
+        addDoc(ref, formData).then(result =>{
+          if (result.path.toString().includes("RSVPInfo/")){
+            console.log("result is: "+ result.path + result.id)
+            $('#myModal').modal('show');
+            clearTimeout(rsvpTimeout)
+          }else{
+            alert(errorMsgBase+"result has path" + result.path)
+            clearTimeout(rsvpTimeout)
+          }
+          clearTimeout(rsvpTimeout)
+        }).catch((error) =>{
+          alert(errorMsgBase + error)
+          clearTimeout(rsvpTimeout)
+        })
+      } catch (err) {
+        alert(errorMsgBase + err)
+        clearTimeout(rsvpTimeout)
+      }
     });
   </script>
   <div>
